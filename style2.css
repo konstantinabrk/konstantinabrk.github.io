@@ -3,35 +3,43 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.8;
     color: #1a1a1a;
     background: #fafafa;
-    padding: 4rem 2rem;
     font-weight: 300;
 }
 
-.container {
-    max-width: 680px;
+.page {
+    max-width: 900px;
     margin: 0 auto;
-    text-align: left;
+    padding: 3rem 2rem 5rem 2rem;
 }
 
-header {
-    margin-bottom: 5rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #e8e8e8;
+/* ---------- Header: photo + name inline, nav tiles alongside ---------- */
+
+.site-header {
     display: flex;
-    gap: 2.5rem;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-bottom: 2.5rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 .profile-photo {
     flex-shrink: 0;
-    width: 180px;
-    height: 180px;
+    width: 170px;
+    height: 170px;
     border-radius: 50%;
     background: #f5f5f5;
     border: 1px solid #e8e8e8;
@@ -40,79 +48,99 @@ header {
     align-items: center;
     justify-content: center;
     color: #aaa;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
-
 .profile-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.header-content {
-    flex: 1;
-    min-width: 0;
-}
-
-h1 {
-    font-size: 2.5rem;
+.header-text h1 {
+    font-size: 1.6rem;
     font-weight: 300;
     letter-spacing: 0.5px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.4rem;
     color: #1a1a1a;
 }
-
-.contact {
-    font-size: 1rem;
+.header-text p {
+    font-size: 1.1rem;
     color: #6a6a6a;
-    line-height: 1.6;
+    line-height: 1.5;
 }
-
-.contact a {
+.header-email {
+    margin-top: 0.5rem;
+}
+.header-email a {
+    color: #7b6b8f;
+}
+.header-text a {
     color: #7b6b8f;
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
-.contact a:hover {
+.header-text a:hover {
     color: #5a4a6f;
 }
 
-.bio {
-    margin: 3rem 0 5rem 0;
+.site-nav {
+    display: flex;
+    gap: 2rem;
+    flex-shrink: 0;
+}
+.nav-tile {
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #6a6a6a;
+    text-decoration: none;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+.nav-tile:hover {
+    color: #5a4a6f;
+}
+.nav-tile.active {
+    color: #7b6b8f;
+    border-bottom-color: #7b6b8f;
+}
+
+/* ---------- Homepage: two-column body ---------- */
+
+.content-grid {
+    width: 100%;
+}
+
+.main-col p {
     font-size: 1.1rem;
     line-height: 1.9;
     color: #2a2a2a;
 }
-
-.bio p {
-    margin-bottom: 1.5rem;
-}
-
-.bio a {
+.main-col a {
     color: #7b6b8f;
     text-decoration: none;
     border-bottom: 1px solid #d5cce0;
     transition: all 0.3s ease;
 }
-
-.bio a:hover {
+.main-col a:hover {
     color: #5a4a6f;
     border-bottom-color: #9b8bb0;
 }
 
-h2 {
+/* ---------- Publications page ---------- */
+
+.content h2 {
     font-size: 0.85rem;
     font-weight: 400;
     letter-spacing: 3px;
     text-transform: uppercase;
-    margin: 4rem 0 2rem 0;
+    margin: 0 0 2rem 0;
     color: #7b6b8f;
     position: relative;
     padding-left: 1rem;
 }
-
-h2::before {
+.content h2::before {
     content: '';
     position: absolute;
     left: 0;
@@ -128,60 +156,46 @@ h2::before {
     padding-bottom: 2rem;
     border-bottom: 1px solid #f0f0f0;
 }
-
 .publication:last-child {
     border-bottom: none;
 }
 
 .pub-title {
-    font-weight: 400;
-    font-size: 1.15rem;
-    margin-bottom: 0.8rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
     color: #1a1a1a;
-    line-height: 1.6;
+    line-height: 1.5;
+}
+.pub-title a {
+    color: #1a1a1a;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+.pub-title a:hover {
+    color: #5a4a6f;
+    border-bottom-color: #9b8bb0;
 }
 
 .pub-authors {
     font-size: 1rem;
     color: #5a5a5a;
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
+    margin-bottom: 0.2rem;
+    line-height: 1.5;
 }
-
 .pub-authors a {
     color: #7b6b8f;
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
 .pub-authors a:hover {
     color: #5a4a6f;
 }
 
 .pub-venue {
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: #6a6a6a;
-    margin-bottom: 0.8rem;
-}
-
-.pub-links {
-    margin-top: 0.6rem;
-}
-
-.pub-links a {
-    display: inline-block;
-    margin-right: 1.2rem;
-    color: #7b6b8f;
-    text-decoration: none;
-    font-size: 0.85rem;
-    padding-bottom: 1px;
-    border-bottom: 1px solid #d5cce0;
-    transition: all 0.3s ease;
-}
-
-.pub-links a:hover {
-    color: #5a4a6f;
-    border-bottom-color: #7b6b8f;
 }
 
 /* Subtle texture */
@@ -204,17 +218,14 @@ body::before {
     z-index: -1;
 }
 
-@media (max-width: 600px) {
-    header {
+/* ---------- Responsive ---------- */
+
+@media (max-width: 700px) {
+    .site-header {
         flex-direction: column;
         align-items: flex-start;
     }
-    
-    .profile-photo {
-        margin-bottom: 1.5rem;
-    }
-    
-    body {
-        padding: 2rem 1rem;
+    .page {
+        padding: 2rem 1.25rem 3rem 1.25rem;
     }
 }
